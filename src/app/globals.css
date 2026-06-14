@@ -36,11 +36,11 @@
     var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
 
-  /* density */
   --section-pad: 104px;
   --gap: 24px;
 }
-[data-theme="light"] {
+/* светлая тема управляется цветовой схемой Mantine */
+[data-mantine-color-scheme="light"] {
   --bg: #ffffff;
   --bg-2: #f1f3f5;
   --surface: #ffffff;
@@ -54,14 +54,6 @@
   --dim: #adb5bd;
   --accent-ink: #ffffff;
   --silhouette-solid: rgba(33, 107, 64, 0.2); /* tree-fern backdrop, light */
-}
-[data-density="compact"] {
-  --section-pad: 72px;
-  --gap: 18px;
-}
-[data-density="comfy"] {
-  --section-pad: 132px;
-  --gap: 30px;
 }
 
 /* ===== Resets ===== */

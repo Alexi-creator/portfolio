@@ -1,5 +1,4 @@
-import { Box, Group, SimpleGrid, Stack } from "@mantine/core"
-import { Btn } from "@/components/ui/Btn"
+import { Box, Button, Group, SimpleGrid, Stack, Text, Title } from "@mantine/core"
 import { Container } from "@/components/ui/Container"
 import { Fern } from "@/components/ui/Fern"
 import { ArrowIcon, DownloadIcon, MailIcon } from "@/components/ui/icons"
@@ -16,23 +15,36 @@ export function Contact() {
 
         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={56} style={{ alignItems: "start" }}>
           <div>
-            <h2>
+            <Title order={2}>
               Let&apos;s build something
               <br />
               resilient together<span className="accent">.</span>
-            </h2>
-            <p style={{ marginTop: 16, maxWidth: 440 }}>
+            </Title>
+            <Text mt={16} maw={440}>
               Senior frontend by trade — now going full-stack with NestJS, Node.js and Postgres on
               production work. The fastest way to reach me is email; résumé attached for the
               details.
-            </p>
+            </Text>
             <Group gap={12} mt={26}>
-              <Btn variant="primary" size="lg" href={`mailto:${PROFILE.email}`}>
-                <MailIcon /> {PROFILE.email}
-              </Btn>
-              <Btn variant="ghost" size="lg" href={PROFILE.resume} download>
-                <DownloadIcon /> Download résumé
-              </Btn>
+              <Button
+                component="a"
+                href={`mailto:${PROFILE.email}`}
+                variant="filled"
+                size="md"
+                leftSection={<MailIcon />}
+              >
+                {PROFILE.email}
+              </Button>
+              <Button
+                component="a"
+                href={PROFILE.resume}
+                download
+                variant="default"
+                size="md"
+                leftSection={<DownloadIcon />}
+              >
+                Download résumé
+              </Button>
             </Group>
           </div>
 

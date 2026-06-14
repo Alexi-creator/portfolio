@@ -1,18 +1,17 @@
-import { Box, Group } from "@mantine/core"
-import { Btn } from "@/components/ui/Btn"
+"use client"
+
+import { Box, Button, Group, useMantineColorScheme } from "@mantine/core"
+import clsx from "clsx"
 import { Container } from "@/components/ui/Container"
 import { Fern } from "@/components/ui/Fern"
 import { DownloadIcon, KiwiIcon, SunIcon } from "@/components/ui/icons"
 import { PROFILE } from "@/data/portfolio"
-import type { Theme } from "@/hooks/useTheme"
 import styles from "./Nav.module.css"
 
-interface NavProps {
-  theme: Theme
-  onToggle: () => void
-}
+export function Nav() {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
+  const isDark = colorScheme !== "light"
 
-export function Nav({ theme, onToggle }: NavProps) {
   return (
     <Box component="nav" className={styles.nav}>
       <Container>
@@ -43,23 +42,26 @@ export function Nav({ theme, onToggle }: NavProps) {
             <button
               type="button"
               className={styles.themeToggle}
-              onClick={onToggle}
+              onClick={toggleColorScheme}
               aria-label="Toggle light / dark theme"
-              title={theme === "dark" ? "Switch to light" : "Switch to dark"}
+              title={isDark ? "Switch to light" : "Switch to dark"}
             >
               <span className={styles.tgTrack}>
-                <span
-                  className={[styles.tgKnob, theme === "light" ? styles.tgKnobLight : null]
-                    .filter(Boolean)
-                    .join(" ")}
-                >
-                  {theme === "dark" ? <KiwiIcon /> : <SunIcon />}
+                <span className={clsx(styles.tgKnob, !isDark && styles.tgKnobLight)}>
+                  {isDark ? <KiwiIcon /> : <SunIcon />}
                 </span>
               </span>
             </button>
-            <Btn variant="ghost" href={PROFILE.resume} download>
-              <DownloadIcon /> resume.pdf
-            </Btn>
+            <Button
+              component="a"
+              href={PROFILE.resume}
+              download
+              variant="default"
+              size="sm"
+              leftSection={<DownloadIcon />}
+            >
+              resume.pdf
+            </Button>
           </Group>
         </Group>
       </Container>

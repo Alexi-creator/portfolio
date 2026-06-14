@@ -1,5 +1,5 @@
+import { Divider, Group, Text } from "@mantine/core"
 import type { ReactNode } from "react"
-import styles from "./SectionLabel.module.css"
 
 interface SectionLabelProps {
   /** Порядковый номер секции, напр. "01". */
@@ -12,10 +12,15 @@ interface SectionLabelProps {
 // Заголовок секции: «01 selected work ──────».
 export function SectionLabel({ idx, children, right }: SectionLabelProps) {
   return (
-    <div className={styles.label}>
-      <span className={styles.idx}>{idx}</span> {children}
-      <span className={styles.ln} />
+    <Group gap={10} align="center" mb={22} wrap="nowrap">
+      <Text component="span" ff="monospace" fz="12.5px" c="dimmed" style={{ whiteSpace: "nowrap" }}>
+        <Text component="span" c="teal" inherit>
+          {idx}
+        </Text>{" "}
+        {children}
+      </Text>
+      <Divider style={{ flex: 1 }} />
       {right}
-    </div>
+    </Group>
   )
 }

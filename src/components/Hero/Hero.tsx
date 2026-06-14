@@ -1,5 +1,4 @@
-import { Grid, Group, SimpleGrid } from "@mantine/core"
-import { Btn } from "@/components/ui/Btn"
+import { Button, Grid, Group, SimpleGrid, Text, Title } from "@mantine/core"
 import { Container } from "@/components/ui/Container"
 import { Section } from "@/components/ui/Section"
 import { StarNZ } from "@/components/ui/StarNZ"
@@ -17,22 +16,22 @@ export function Hero() {
               <span className={styles.eyebrow}>
                 <span className="dot" /> {PROFILE.location}
               </span>
-              <h1 style={{ marginTop: 22 }}>
+              <Title order={1} mt={22}>
                 I architect frontends
                 <br />
                 that scale
                 <StarNZ />
-              </h1>
-              <p style={{ fontSize: 17, maxWidth: 560, marginTop: 22, color: "var(--fg-2)" }}>
+              </Title>
+              <Text fz={17} maw={560} mt={22} c="var(--fg-2)">
                 {PROFILE.summary}
-              </p>
+              </Text>
               <Group gap={12} mt={30}>
-                <Btn variant="primary" size="lg" href="#work">
+                <Button component="a" href="#work" variant="filled" size="md">
                   View selected work →
-                </Btn>
-                <Btn variant="ghost" size="lg" href={`mailto:${PROFILE.email}`}>
+                </Button>
+                <Button component="a" href={`mailto:${PROFILE.email}`} variant="default" size="md">
                   Get in touch
-                </Btn>
+                </Button>
               </Group>
             </div>
           </Grid.Col>

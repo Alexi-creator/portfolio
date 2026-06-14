@@ -75,22 +75,22 @@
   padding-left: 14px;
 }
 /* терминал остаётся тёмным «кодовым» панелем и в светлой теме */
-:global([data-theme="light"]) .term {
+:global([data-mantine-color-scheme="light"]) .term {
   background: #1a1b1e;
   border-color: #2c2e33;
   box-shadow: 0 24px 60px -34px rgba(15, 30, 55, 0.35);
 }
-:global([data-theme="light"]) .termBar {
+:global([data-mantine-color-scheme="light"]) .termBar {
   background: #25262b;
   border-color: #373a40;
 }
-:global([data-theme="light"]) .termTitle {
+:global([data-mantine-color-scheme="light"]) .termTitle {
   color: #909296;
 }
-:global([data-theme="light"]) .termBody {
+:global([data-mantine-color-scheme="light"]) .termBody {
   color: #a6a7ab;
 }
-:global([data-theme="light"]) .termOut {
+:global([data-mantine-color-scheme="light"]) .termOut {
   color: #e9ecef;
 }
 

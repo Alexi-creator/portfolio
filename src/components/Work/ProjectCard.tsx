@@ -1,7 +1,5 @@
-import { Group } from "@mantine/core"
-import { Btn } from "@/components/ui/Btn"
+import { Badge, Box, Button, Flex, Group, Paper, Text, Title } from "@mantine/core"
 import { ArrowIcon, ExpandIcon } from "@/components/ui/icons"
-import { Tag } from "@/components/ui/Tag"
 import type { Project } from "@/data/portfolio"
 import styles from "./ProjectCard.module.css"
 
@@ -12,44 +10,78 @@ interface ProjectCardProps {
   onOpen: OpenLightbox
 }
 
+function StackBadge({ children, color = "teal" }: { children: string; color?: string }) {
+  return (
+    <Badge leftSection={<Box w={7} h={7} bg={color} style={{ borderRadius: 1 }} />}>
+      {children}
+    </Badge>
+  )
+}
+
 export function ProjectCard({ p, onOpen }: ProjectCardProps) {
   return (
-    <article className={styles.card}>
-      <div className={styles.head}>
+    <Paper p="clamp(26px, 3.4vw, 42px)">
+      <Flex
+        justify="space-between"
+        align="flex-start"
+        gap={24}
+        direction={{ base: "column", sm: "row" }}
+      >
         <div>
-          <div className={`${styles.meta} mono`}>
-            <span className="accent">{p.meta.type}</span>
-            <span className={styles.sep}>/</span>
-            <span>{p.meta.role}</span>
-            <span className={styles.sep}>/</span>
-            <span>{p.meta.year}</span>
-          </div>
-          <h2 style={{ marginTop: 12 }}>{p.name}</h2>
-          <p className={styles.tagline}>{p.tagline}</p>
+          <Group gap={8} ff="monospace" fz="12.5px" c="var(--fg-2)">
+            <Text span inherit c="teal">
+              {p.meta.type}
+            </Text>
+            <Text span inherit c="dimmed">
+              /
+            </Text>
+            <Text span inherit>
+              {p.meta.role}
+            </Text>
+            <Text span inherit c="dimmed">
+              /
+            </Text>
+            <Text span inherit>
+              {p.meta.year}
+            </Text>
+          </Group>
+          <Title order={2} mt={12}>
+            {p.name}
+          </Title>
+          <Text fz={16} c="var(--fg-2)" mt={10} maw={620}>
+            {p.tagline}
+          </Text>
         </div>
-        <div className={styles.live}>
+        <Group gap={10} style={{ flexShrink: 0 }}>
           {p.live.length > 0 ? (
             p.live.map((l) => (
-              <Btn variant="ghost" href={l.href} target="_blank" rel="noreferrer" key={l.label}>
-                {l.label} <ArrowIcon />
-              </Btn>
+              <Button
+                key={l.label}
+                component="a"
+                href={l.href}
+                target="_blank"
+                rel="noreferrer"
+                variant="default"
+                size="sm"
+                rightSection={<ArrowIcon />}
+              >
+                {l.label}
+              </Button>
             ))
           ) : (
-            <Tag square squareColor="var(--muted)" style={{ alignSelf: "flex-start" }}>
-              private · employer product
-            </Tag>
+            <StackBadge color="var(--muted)">private · employer product</StackBadge>
           )}
-        </div>
-      </div>
+        </Group>
+      </Flex>
 
-      <p className={styles.desc}>{p.description}</p>
+      <Text mt={24} fz={15} c="var(--fg-2)" maw={760}>
+        {p.description}
+      </Text>
 
       {/* stack */}
       <Group gap={8} mt={22}>
         {p.stack.map((t) => (
-          <Tag square key={t}>
-            {t}
-          </Tag>
+          <StackBadge key={t}>{t}</StackBadge>
         ))}
       </Group>
 
@@ -57,19 +89,26 @@ export function ProjectCard({ p, onOpen }: ProjectCardProps) {
       <div className={styles.hlGrid}>
         {p.highlights.map((h) => (
           <div className={styles.hl} key={h.label}>
-            <div className={`${styles.hlMetric} mono`}>{h.metric}</div>
-            <div className={styles.hlLabel}>{h.label}</div>
+            <Text ff="monospace" fz={24} fw={600} c="teal" style={{ letterSpacing: "-0.02em" }}>
+              {h.metric}
+            </Text>
+            <Text fz="13.5px" c="var(--fg-2)" mt={8} lh={1.5}>
+              {h.label}
+            </Text>
           </div>
         ))}
       </div>
 
       {/* gallery */}
-      <div className={`${styles.galLabel} mono`}>
+      <Text ff="monospace" fz="12.5px" c="dimmed" mt={32} mb={14}>
         {`// gallery — ${p.images.length} screens`}
         {p.note && (
-          <span className={styles.galNote}> · placeholders, drop real screens to replace</span>
+          <Text span inherit c="var(--dim)">
+            {" "}
+            · placeholders, drop real screens to replace
+          </Text>
         )}
-      </div>
+      </Text>
       <div className={styles.gallery}>
         {p.images.map((img, i) => (
           <button
@@ -87,6 +126,6 @@ export function ProjectCard({ p, onOpen }: ProjectCardProps) {
           </button>
         ))}
       </div>
-    </article>
+    </Paper>
   )
 }

@@ -1,5 +1,7 @@
 "use client"
 
+import { Text } from "@mantine/core"
+import clsx from "clsx"
 import { useState } from "react"
 import { Container } from "@/components/ui/Container"
 import { Section } from "@/components/ui/Section"
@@ -24,9 +26,9 @@ export function Work({ onOpen }: WorkProps) {
         <SectionLabel
           idx="01"
           right={
-            <span className={`${styles.count} mono`}>
+            <Text ff="monospace" fz="12.5px" c="dimmed" style={{ whiteSpace: "nowrap" }}>
               {String(active + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
-            </span>
+            </Text>
           }
         >
           selected work
@@ -41,9 +43,7 @@ export function Work({ onOpen }: WorkProps) {
                 key={pr.id}
                 role="tab"
                 aria-selected={i === active}
-                className={[styles.tab, i === active ? styles.tabOn : null]
-                  .filter(Boolean)
-                  .join(" ")}
+                className={clsx(styles.tab, i === active && styles.tabOn)}
                 onClick={() => setActive(i)}
               >
                 <span className={`${styles.tabIdx} mono`}>{String(i + 1).padStart(2, "0")}</span>

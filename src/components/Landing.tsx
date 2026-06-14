@@ -8,7 +8,6 @@ import { Skills } from "@/components/Skills/Skills"
 import { Lightbox } from "@/components/Work/Lightbox"
 import { Work } from "@/components/Work/Work"
 import type { Project } from "@/data/portfolio"
-import { useTheme } from "@/hooks/useTheme"
 
 interface LightboxState {
   project: Project
@@ -16,7 +15,6 @@ interface LightboxState {
 }
 
 export function Landing() {
-  const { theme, toggle } = useTheme()
   const [lb, setLb] = useState<LightboxState | null>(null)
 
   const openLb = (project: Project, index: number) => setLb({ project, index })
@@ -29,7 +27,7 @@ export function Landing() {
 
   return (
     <div id="top">
-      <Nav theme={theme} onToggle={toggle} />
+      <Nav />
       <Hero />
       <Work onOpen={openLb} />
       <Skills />
