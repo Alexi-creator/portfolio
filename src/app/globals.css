@@ -1,49 +1,166 @@
+/* ============================================================
+   ГЛОБАЛЬНЫЕ СТИЛИ
+   Здесь только то, что действительно общее для всего лендинга:
+   дизайн-токены, ресеты, базовая типографика, фон и утилиты.
+   Стили секций/компонентов живут в *.module.css рядом с ними.
+   ============================================================ */
+
+/* ===== Mantine-aligned design tokens ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #1a1b1e; /* mantine dark.7 (body) */
+  --bg-2: #141517; /* below body */
+  --surface: #25262b; /* mantine dark.6 (paper) */
+  --surface-2: #2c2e33; /* dark.5 (hover) */
+  --surface-3: #1f2024; /* between bg and surface */
+  --line: #373a40; /* dark.4 (default border) */
+  --line-strong: #5c5f66; /* dark.3 */
+  --fg: #e9ecef; /* gray.1 — brighter heading text on dark */
+  --fg-2: #a6a7ab; /* dark.1 */
+  --muted: #909296; /* dark.2 */
+  --dim: #5c5f66; /* dark.3 */
+  --accent: #38d9a9; /* mantine teal.4 — design default */
+  --accent-ink: #06121f;
+  --accent-soft: color-mix(in oklab, var(--accent) 16%, transparent);
+  --accent-line: color-mix(in oklab, var(--accent) 30%, transparent);
+  --silhouette-solid: rgba(110, 186, 150, 0.26); /* tree-fern backdrop, dark */
+  --pos: #51cf66; /* green.5 */
+  --neg: #fa5252; /* red.5 */
+  --warn: #fab005; /* yellow.5 */
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: calc(var(--radius) * 1.6);
+
+  --font-sans:
+    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+
+  /* density */
+  --section-pad: 104px;
+  --gap: 24px;
+}
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-2: #f1f3f5;
+  --surface: #ffffff;
+  --surface-2: #f1f3f5;
+  --surface-3: #f8f9fa;
+  --line: #dee2e6;
+  --line-strong: #ced4da;
+  --fg: #141517;
+  --fg-2: #495057;
+  --muted: #868e96;
+  --dim: #adb5bd;
+  --accent-ink: #ffffff;
+  --silhouette-solid: rgba(33, 107, 64, 0.2); /* tree-fern backdrop, light */
+}
+[data-density="compact"] {
+  --section-pad: 72px;
+  --gap: 18px;
+}
+[data-density="comfy"] {
+  --section-pad: 132px;
+  --gap: 30px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* ===== Resets ===== */
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg);
+  color: var(--fg-2);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
 a {
   color: inherit;
-  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* ===== Base typography ===== */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--fg);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+h1 {
+  font-size: clamp(38px, 5.4vw, 66px);
+  line-height: 1.04;
+}
+h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.12;
+}
+h3 {
+  font-size: 19px;
+  line-height: 1.3;
+}
+p {
+  line-height: 1.6;
+}
+
+/* ===== Page background (dotted texture) + stacking context ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--line-strong) 50%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
+  opacity: 0.5;
+}
+#top {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Global utilities (cross-cutting helpers) ===== */
+.mono {
+  font-family: var(--font-mono);
+}
+.accent {
+  color: var(--accent);
+}
+.muted {
+  color: var(--muted);
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pos);
+  box-shadow: 0 0 8px var(--pos);
 }

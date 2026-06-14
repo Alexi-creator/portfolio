@@ -1,0 +1,11 @@
+.section {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+/* Разделитель сверху секции (тонкая линия), с отступом до контента. */
+.divider {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 0 0 var(--section-pad);
+}

@@ -1,0 +1,100 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in oklab, var(--bg) 78%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.25s ease;
+}
+.inner {
+  height: 62px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+}
+.brandMark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.brandName {
+  font-weight: 600;
+  color: var(--fg);
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.brandRole {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.nlink {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--fg-2);
+  text-decoration: none;
+  transition: color 0.12s;
+}
+.nlink:hover {
+  color: var(--fg);
+}
+.hash {
+  color: var(--accent);
+}
+@media (max-width: 860px) {
+  .nlink {
+    display: none;
+  }
+}
+
+/* theme toggle switch */
+.themeToggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.tgTrack {
+  width: 48px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+.themeToggle:hover .tgTrack {
+  border-color: var(--accent);
+}
+.tgKnob {
+  position: absolute;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: grid;
+  place-items: center;
+  transition:
+    transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background 0.25s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.tgKnobLight {
+  transform: translateX(22px);
+}
