@@ -1,17 +1,17 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  // Статический экспорт: `next build` сгенерирует готовую статику в папку `out/`,
-  // которую можно раздавать любым статическим сервером (nginx, S3, GitHub Pages...).
+  // Static export: `next build` outputs ready-to-serve static files into `out/`,
+  // which can be served by any static server (nginx, S3, GitHub Pages...).
   output: "export",
 
-  // Для статики оптимизатор изображений Next недоступен (нужен сервер),
-  // поэтому отдаём изображения как есть.
+  // Next's image optimizer needs a server, which isn't available for static
+  // export, so we serve images as-is.
   images: {
     unoptimized: true,
   },
 
-  // Слэш в конце URL — удобнее для статической раздачи (каждый маршрут -> index.html).
+  // Trailing slash is friendlier for static hosting (each route -> index.html).
   trailingSlash: true,
 }
 
