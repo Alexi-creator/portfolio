@@ -1,7 +1,6 @@
 "use client"
 
-import { Box, Button, Group, useMantineColorScheme } from "@mantine/core"
-import clsx from "clsx"
+import { Box, Button, Group, useComputedColorScheme, useMantineColorScheme } from "@mantine/core"
 import { Container } from "@/components/ui/Container"
 import { Fern } from "@/components/ui/Fern"
 import { DownloadIcon, KiwiIcon, SunIcon } from "@/components/ui/icons"
@@ -9,8 +8,15 @@ import { PROFILE } from "@/data/portfolio"
 import styles from "./Nav.module.css"
 
 export function Nav() {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
-  const isDark = colorScheme !== "light"
+  // keepTransitions: иначе Mantine при смене схемы вставляет style, глушащий
+  // ВСЕ transitions (`* { transition: none !important }`) — и анимация ползунка
+  // не отрабатывает. С этим флагом тема плавно переключается.
+  const { setColorScheme } = useMantineColorScheme({ keepTransitions: true })
+  // Значение читаем только в обработчике клика (на клиенте) — в разметке схему
+  // не ветвим: позиция ползунка и иконки управляются CSS от атрибута Mantine,
+  // поэтому нет ни hydration mismatch, ни setState в эффекте.
+  const computed = useComputedColorScheme("dark")
+  const toggleColorScheme = () => setColorScheme(computed === "dark" ? "light" : "dark")
 
   return (
     <Box component="nav" className={styles.nav}>
@@ -44,11 +50,16 @@ export function Nav() {
               className={styles.themeToggle}
               onClick={toggleColorScheme}
               aria-label="Toggle light / dark theme"
-              title={isDark ? "Switch to light" : "Switch to dark"}
+              title="Toggle light / dark theme"
             >
               <span className={styles.tgTrack}>
-                <span className={clsx(styles.tgKnob, !isDark && styles.tgKnobLight)}>
-                  {isDark ? <KiwiIcon /> : <SunIcon />}
+                <span className={styles.tgKnob}>
+                  <Box component="span" className={styles.tgIcon} lightHidden>
+                    <KiwiIcon />
+                  </Box>
+                  <Box component="span" className={styles.tgIcon} darkHidden>
+                    <SunIcon />
+                  </Box>
                 </span>
               </span>
             </button>

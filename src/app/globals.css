@@ -38,9 +38,13 @@
 
   --section-pad: 104px;
   --gap: 24px;
+
+  /* позиция ползунка переключателя темы (флипается со схемой) */
+  --tg-knob-x: 0px;
 }
 /* светлая тема управляется цветовой схемой Mantine */
 [data-mantine-color-scheme="light"] {
+  --tg-knob-x: 22px;
   --bg: #ffffff;
   --bg-2: #f1f3f5;
   --surface: #ffffff;

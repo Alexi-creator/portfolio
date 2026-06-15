@@ -90,11 +90,15 @@
   color: var(--accent-ink);
   display: grid;
   place-items: center;
+  /* позиция задаётся переменной --tg-knob-x, которая флипается со схемой Mantine */
+  transform: translateX(var(--tg-knob-x));
   transition:
-    transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1),
-    background 0.25s ease;
+    transform 0.55s cubic-bezier(0.65, 0, 0.35, 1),
+    background 0.45s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
-.tgKnobLight {
-  transform: translateX(22px);
+/* иконка в ползунке: grid-ячейка совпадает, видна одна (вторую прячет Mantine) */
+.tgIcon {
+  grid-area: 1 / 1;
+  display: inline-flex;
 }
