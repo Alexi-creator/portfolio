@@ -19,7 +19,7 @@ export function Nav() {
   const toggleColorScheme = () => setColorScheme(computed === "dark" ? "light" : "dark")
 
   return (
-    <Box component="nav" className={styles.nav}>
+    <Box component="header" className={styles.nav}>
       <Container>
         <Group justify="space-between" align="center" className={styles.inner} wrap="nowrap">
           <a className={styles.brand} href="#top">
@@ -33,18 +33,22 @@ export function Nav() {
           </a>
 
           <Group gap={26} align="center" wrap="nowrap">
-            <a className={styles.nlink} href="#about">
-              <span className={styles.hash}>#</span> about
-            </a>
-            <a className={styles.nlink} href="#work">
-              <span className={styles.hash}>#</span> work
-            </a>
-            <a className={styles.nlink} href="#stack">
-              <span className={styles.hash}>#</span> stack
-            </a>
-            <a className={styles.nlink} href="#contact">
-              <span className={styles.hash}>#</span> contact
-            </a>
+            <Box component="nav" aria-label="Primary" className={styles.links}>
+              <Group gap={26} align="center" wrap="nowrap">
+                <a className={styles.nlink} href="#about">
+                  <span className={styles.hash}>#</span> about
+                </a>
+                <a className={styles.nlink} href="#work">
+                  <span className={styles.hash}>#</span> work
+                </a>
+                <a className={styles.nlink} href="#stack">
+                  <span className={styles.hash}>#</span> stack
+                </a>
+                <a className={styles.nlink} href="#contact">
+                  <span className={styles.hash}>#</span> contact
+                </a>
+              </Group>
+            </Box>
             <button
               type="button"
               className={styles.themeToggle}

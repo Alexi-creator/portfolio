@@ -49,7 +49,7 @@
   color: var(--accent);
 }
 @media (max-width: 860px) {
-  .nlink {
+  .links {
     display: none;
   }
 }
