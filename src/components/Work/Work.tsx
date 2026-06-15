@@ -46,9 +46,11 @@ export function Work({ onOpen }: WorkProps) {
                 className={clsx(styles.tab, i === active && styles.tabOn)}
                 onClick={() => setActive(i)}
               >
-                <span className={`${styles.tabIdx} mono`}>{String(i + 1).padStart(2, "0")}</span>
+                <span className={clsx(styles.tabIdx, "mono")}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <span className={styles.tabName}>{pr.name}</span>
-                <span className={`${styles.tabYear} mono`}>{pr.meta.year}</span>
+                <span className={clsx(styles.tabYear, "mono")}>{pr.meta.year}</span>
               </button>
             ))}
           </div>

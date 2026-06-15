@@ -1,8 +1,8 @@
 /* ============================================================
-   ГЛОБАЛЬНЫЕ СТИЛИ
-   Здесь только то, что действительно общее для всего лендинга:
-   дизайн-токены, ресеты, базовая типографика, фон и утилиты.
-   Стили секций/компонентов живут в *.module.css рядом с ними.
+   GLOBAL STYLES
+   Only what is truly shared across the landing page:
+   design tokens, resets, base typography and utilities.
+   Section/component styles live in their own *.module.css.
    ============================================================ */
 
 /* ===== Mantine-aligned design tokens ===== */
@@ -36,13 +36,12 @@
     var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
 
-  --section-pad: 104px;
   --gap: 24px;
 
-  /* позиция ползунка переключателя темы (флипается со схемой) */
+  /* theme-toggle knob position (flipped per color scheme) */
   --tg-knob-x: 0px;
 }
-/* светлая тема управляется цветовой схемой Mantine */
+/* light theme is driven by Mantine's color scheme */
 [data-mantine-color-scheme="light"] {
   --tg-knob-x: 22px;
   --bg: #ffffff;
@@ -79,13 +78,14 @@ body {
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* clip, а не hidden: не создаёт контейнер прокрутки, иначе ломается
-     backdrop-filter у sticky-хедера */
+  /* clip, not hidden: avoids creating a scroll container, which would
+     otherwise break the sticky header's backdrop-filter */
   overflow-x: clip;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
+
 ::selection {
   background: var(--accent);
   color: var(--accent-ink);
@@ -128,28 +128,6 @@ h3 {
 
 p {
   line-height: 1.6;
-}
-
-/* ===== Page background (dotted texture) + stacking context ===== */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: radial-gradient(
-    color-mix(in oklab, var(--line-strong) 50%, transparent) 1px,
-    transparent 1px
-  );
-  background-size: 26px 26px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
-  opacity: 0.5;
-}
-
-#top {
-  position: relative;
-  z-index: 1;
 }
 
 /* ===== Global utilities (cross-cutting helpers) ===== */

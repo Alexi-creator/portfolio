@@ -1,6 +1,6 @@
 import styles from "./StarNZ.module.css"
 
-// Звезда с флага Новой Зеландии.
+// Star from the New Zealand flag.
 export function StarNZ() {
   return (
     <svg className={styles.nzStar} viewBox="0 0 24 24" aria-hidden="true">

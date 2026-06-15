@@ -5,14 +5,13 @@ import styles from "./Section.module.css"
 
 interface SectionProps {
   id?: string
-  /** Рисует тонкий разделитель сверху секции. */
   divider?: boolean
   className?: string
   style?: CSSProperties
   children: ReactNode
 }
 
-// Базовая секция лендинга: вертикальные отступы + опциональный разделитель.
+// Base landing section: vertical padding + optional divider.
 export function Section({ id, divider = false, className, style, children }: SectionProps) {
   return (
     <Box component="section" id={id} className={clsx(styles.section, className)} style={style}>

@@ -1,4 +1,12 @@
+/* --section-pad is set here (not in :root): the divider and Contact's footer live
+   inside <Section> and inherit it, so the spacing stays in sync. */
 .section {
+  --section-pad: 44px;
   padding: var(--section-pad) 0;
   position: relative;
+}
+@media (min-width: 768px) {
+  .section {
+    --section-pad: 64px;
+  }
 }

@@ -1,11 +1,11 @@
 import { createTheme } from "@mantine/core"
 
-// Тема лендинга. Дизайн-токены совпадают с палитрой Mantine, поэтому здесь
-// настраиваем только акцент, шрифты, радиусы, размеры заголовков и дефолты
-// базовых компонентов — остальное берёт цветовая схема Mantine (dark/light).
+// Landing theme. Tokens already match Mantine's palette, so here we only set the
+// accent, fonts, radii, heading sizes and base component defaults — everything
+// else comes from Mantine's color scheme (dark/light).
 export const theme = createTheme({
   primaryColor: "teal",
-  // teal.4 (#38d9a9) — акцент дизайна; в светлой теме берём чуть темнее для контраста
+  // teal.4 (#38d9a9) is the accent; light theme uses a darker shade for contrast
   primaryShade: { light: 6, dark: 4 },
 
   fontFamily: "var(--font-geist-sans), sans-serif",
@@ -23,14 +23,12 @@ export const theme = createTheme({
   },
 
   components: {
-    // Кнопки дизайна — моноширинный шрифт, средняя жирность.
     Button: {
       defaultProps: { radius: "sm" },
       styles: {
         root: { fontFamily: "var(--font-mono)", fontWeight: 500 },
       },
     },
-    // Технологические бейджи — прямоугольные, без капса, моно.
     Badge: {
       defaultProps: { radius: "sm", variant: "default", size: "lg" },
       styles: {
@@ -38,7 +36,6 @@ export const theme = createTheme({
         label: { textTransform: "none" },
       },
     },
-    // Карточки = поверхность + бордер дизайна.
     Paper: {
       defaultProps: { radius: "md", withBorder: true },
     },

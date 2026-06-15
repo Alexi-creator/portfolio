@@ -19,8 +19,8 @@
   }
 }
 
-/* Кликабельная подложка-фон: закрывает лайтбокс кликом вне контента.
-   Лежит под контентом (z-index 0); контент поднят на z-index 1. */
+/* Clickable backdrop: closes the lightbox on a click outside the content.
+   Sits below the content (z-index 0); content is raised to z-index 1. */
 .backdrop {
   position: absolute;
   inset: 0;

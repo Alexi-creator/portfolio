@@ -1,4 +1,4 @@
-// Контент лендинга: профиль, метрики, проекты, стек.
+// Landing content: profile, metrics, projects, stack.
 
 export interface Profile {
   name: string

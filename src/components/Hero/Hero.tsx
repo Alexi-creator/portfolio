@@ -1,4 +1,5 @@
 import { Button, Grid, Group, SimpleGrid, Text, Title } from "@mantine/core"
+import clsx from "clsx"
 import { Container } from "@/components/ui/Container"
 import { Section } from "@/components/ui/Section"
 import { StarNZ } from "@/components/ui/StarNZ"
@@ -7,8 +8,7 @@ import styles from "./Hero.module.css"
 
 export function Hero() {
   return (
-    <Section id="about" style={{ paddingTop: "clamp(56px, 8vw, 110px)" }}>
-      <div className={styles.heroBg} aria-hidden="true" />
+    <Section id="about">
       <Container>
         <Grid gap={56} align="center" className={styles.layer}>
           <Grid.Col span={{ base: 12, md: 7 }}>
@@ -37,14 +37,14 @@ export function Hero() {
           </Grid.Col>
 
           <Grid.Col span={{ base: 12, md: 5 }}>
-            <div className={`${styles.term} ${styles.rise}`} style={{ animationDelay: ".08s" }}>
+            <div className={clsx(styles.term, styles.rise)} style={{ animationDelay: ".08s" }}>
               <div className={styles.termBar}>
                 <span className={styles.tdot} style={{ background: "#FA5252" }} />
                 <span className={styles.tdot} style={{ background: "#FAB005" }} />
                 <span className={styles.tdot} style={{ background: "#51CF66" }} />
-                <span className={`${styles.termTitle} mono`}>~/elijah — whoami</span>
+                <span className={clsx(styles.termTitle, "mono")}>~/elijah — whoami</span>
               </div>
-              <div className={`${styles.termBody} mono`}>
+              <div className={clsx(styles.termBody, "mono")}>
                 <div>
                   <span className="accent">$</span> whoami
                 </div>
@@ -79,7 +79,7 @@ export function Hero() {
         <SimpleGrid className={styles.layer} cols={{ base: 2, sm: 4 }} spacing="var(--gap)" mt={64}>
           {STATS.map((s) => (
             <div className={styles.stat} key={s.label}>
-              <div className={`${styles.statVal} mono`}>
+              <div className={clsx(styles.statVal, "mono")}>
                 {s.value}
                 <span className={styles.statUnit}>{s.unit}</span>
               </div>

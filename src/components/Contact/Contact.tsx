@@ -1,4 +1,5 @@
 import { Box, Button, Group, SimpleGrid, Stack, Text, Title } from "@mantine/core"
+import clsx from "clsx"
 import { Container } from "@/components/ui/Container"
 import { Fern } from "@/components/ui/Fern"
 import { ArrowIcon, DownloadIcon, MailIcon } from "@/components/ui/icons"
@@ -50,19 +51,19 @@ export function Contact() {
 
           <Stack gap={10}>
             <a className={styles.row} href={`mailto:${PROFILE.email}`}>
-              <span className={`${styles.key} mono`}>email</span>
+              <span className={clsx(styles.key, "mono")}>email</span>
               <span className={styles.val}>
                 {PROFILE.email} <ArrowIcon />
               </span>
             </a>
             <a className={styles.row} href={PROFILE.linkedinUrl} target="_blank" rel="noreferrer">
-              <span className={`${styles.key} mono`}>linkedin</span>
+              <span className={clsx(styles.key, "mono")}>linkedin</span>
               <span className={styles.val}>
                 {PROFILE.linkedin} <ArrowIcon />
               </span>
             </a>
             <a className={styles.row} href={PROFILE.resume} download>
-              <span className={`${styles.key} mono`}>resume</span>
+              <span className={clsx(styles.key, "mono")}>resume</span>
               <span className={styles.val}>
                 Elijah_Pavlov_Resume.pdf <DownloadIcon />
               </span>
@@ -72,13 +73,13 @@ export function Contact() {
 
         <Box component="footer" className={styles.footer}>
           <Group justify="space-between" gap={16} wrap="wrap">
-            <Group gap={8} className={`${styles.footerItem} mono`}>
+            <Group gap={8} className={clsx(styles.footerItem, "mono")}>
               <Fern size={24} style={{ color: "var(--accent)" }} />
               <span>
                 <span className="accent">$</span> echo &quot;© 2026 {PROFILE.name}&quot;
               </span>
             </Group>
-            <Group gap={7} className={`${styles.footerItem} mono`}>
+            <Group gap={7} className={clsx(styles.footerItem, "mono")}>
               <span className="dot" style={{ display: "inline-block" }} /> frontend architecture →
               full-stack · made in Aotearoa
             </Group>

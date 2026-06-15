@@ -8,13 +8,13 @@ import { PROFILE } from "@/data/portfolio"
 import styles from "./Nav.module.css"
 
 export function Nav() {
-  // keepTransitions: иначе Mantine при смене схемы вставляет style, глушащий
-  // ВСЕ transitions (`* { transition: none !important }`) — и анимация ползунка
-  // не отрабатывает. С этим флагом тема плавно переключается.
+  // keepTransitions: otherwise Mantine injects a style on scheme change that kills
+  // ALL transitions (`* { transition: none !important }`), so the knob animation
+  // never runs. With this flag the theme switches smoothly.
   const { setColorScheme } = useMantineColorScheme({ keepTransitions: true })
-  // Значение читаем только в обработчике клика (на клиенте) — в разметке схему
-  // не ветвим: позиция ползунка и иконки управляются CSS от атрибута Mantine,
-  // поэтому нет ни hydration mismatch, ни setState в эффекте.
+  // We only read the value inside the click handler (on the client); the markup
+  // never branches on the scheme — knob position and icons are driven by CSS off
+  // the Mantine attribute, so there's no hydration mismatch and no setState in an effect.
   const computed = useComputedColorScheme("dark")
   const toggleColorScheme = () => setColorScheme(computed === "dark" ? "light" : "dark")
 

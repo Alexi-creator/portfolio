@@ -89,14 +89,14 @@
   color: var(--accent-ink);
   display: grid;
   place-items: center;
-  /* позиция задаётся переменной --tg-knob-x, которая флипается со схемой Mantine */
+  /* position comes from --tg-knob-x, which flips with the Mantine color scheme */
   transform: translateX(var(--tg-knob-x));
   transition:
     transform 0.55s cubic-bezier(0.65, 0, 0.35, 1),
     background 0.45s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
-/* иконка в ползунке: grid-ячейка совпадает, видна одна (вторую прячет Mantine) */
+/* icon inside the knob: both share one grid cell, only one shows (Mantine hides the other) */
 .tgIcon {
   grid-area: 1 / 1;
   display: inline-flex;

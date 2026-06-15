@@ -1,9 +1,9 @@
 import type { CSSProperties } from "react"
 import styles from "./Fern.module.css"
 
-/* Silver fern (NZ) — процедурная. Один центральный стебель (rachis) и парные
-   листочки (pinnae): длиннее у основания, короче к вершине; каждый листок —
-   отдельный залитый path, поэтому между соседями остаётся воздух. */
+/* Silver fern (NZ) — generated procedurally. One central stem (rachis) with paired
+   leaflets (pinnae): longer at the base, shorter toward the tip; each leaflet is a
+   separate filled path, so there's a gap between neighbours. */
 const FERN = (() => {
   const baseX = 50
   const baseY = 120

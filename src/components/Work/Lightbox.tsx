@@ -1,5 +1,6 @@
 "use client"
 
+import clsx from "clsx"
 import { useCallback, useEffect } from "react"
 import type { Project } from "@/data/portfolio"
 import styles from "./Lightbox.module.css"
@@ -38,7 +39,6 @@ export function Lightbox({ project, index, onClose, onNav }: LightboxProps) {
       aria-modal="true"
       aria-label={`${project.name} gallery`}
     >
-      {/* фон: клик вне контента закрывает лайтбокс */}
       <button
         type="button"
         className={styles.backdrop}
@@ -46,7 +46,7 @@ export function Lightbox({ project, index, onClose, onNav }: LightboxProps) {
         aria-label="Close gallery"
       />
 
-      <div className={`${styles.top} mono`}>
+      <div className={clsx(styles.top, "mono")}>
         <span>
           <span className="accent">{project.name}</span> / {String(index + 1).padStart(2, "0")} of{" "}
           {String(project.images.length).padStart(2, "0")}
@@ -57,7 +57,7 @@ export function Lightbox({ project, index, onClose, onNav }: LightboxProps) {
       </div>
       <button
         type="button"
-        className={`${styles.arrow} ${styles.prev}`}
+        className={clsx(styles.arrow, styles.prev)}
         onClick={() => onNav(-1)}
         aria-label="Previous"
       >
@@ -66,11 +66,11 @@ export function Lightbox({ project, index, onClose, onNav }: LightboxProps) {
       <div className={styles.stage}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={img.src} alt={img.caption} />
-        <div className={`${styles.cap} mono`}>{img.caption}</div>
+        <div className={clsx(styles.cap, "mono")}>{img.caption}</div>
       </div>
       <button
         type="button"
-        className={`${styles.arrow} ${styles.next}`}
+        className={clsx(styles.arrow, styles.next)}
         onClick={() => onNav(1)}
         aria-label="Next"
       >

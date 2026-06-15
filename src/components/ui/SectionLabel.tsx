@@ -2,14 +2,13 @@ import { Divider, Group, Text } from "@mantine/core"
 import type { ReactNode } from "react"
 
 interface SectionLabelProps {
-  /** Порядковый номер секции, напр. "01". */
+  /** Section index, e.g. "01". */
   idx: string
   children: ReactNode
-  /** Доп. контент справа от линии (напр. счётчик проектов). */
+  /** Extra content to the right of the line (e.g. a project counter). */
   right?: ReactNode
 }
 
-// Заголовок секции: «01 selected work ──────».
 export function SectionLabel({ idx, children, right }: SectionLabelProps) {
   return (
     <Group gap={10} align="center" mb={22} wrap="nowrap">

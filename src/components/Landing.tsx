@@ -26,7 +26,7 @@ export function Landing() {
     })
 
   return (
-    <div id="top">
+    <>
       <Nav />
       <Hero />
       <Work onOpen={openLb} />
@@ -35,6 +35,6 @@ export function Landing() {
       {lb && (
         <Lightbox project={lb.project} index={lb.index} onClose={() => setLb(null)} onNav={nav} />
       )}
-    </div>
+    </>
   )
 }

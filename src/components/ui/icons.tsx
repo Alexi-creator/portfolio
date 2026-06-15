@@ -1,5 +1,5 @@
-// Набор инлайновых SVG-иконок дизайна. Все декоративные (идут рядом с текстом),
-// поэтому помечены aria-hidden, чтобы не дублироваться для скринридеров.
+// Inline SVG icons. All decorative (they sit next to text), so they're marked
+// aria-hidden to avoid being announced redundantly by screen readers.
 
 export function ArrowIcon() {
   return (

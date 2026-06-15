@@ -1,4 +1,4 @@
-/* highlights — сетка с «бордюрами» через зазор в 1px */
+/* highlights — grid with "borders" drawn via a 1px gap */
 .hlGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
