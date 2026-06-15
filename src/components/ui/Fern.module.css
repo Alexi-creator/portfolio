@@ -29,11 +29,13 @@
   transform-origin: 44% 95%;
 }
 
-.fernMark:hover {
+.fernMark:hover,
+:global(.fern-sway-trigger):hover .fernMark {
   transform: scale(1.12);
 }
 
-.fernMark:hover::before {
+.fernMark:hover::before,
+:global(.fern-sway-trigger):hover .fernMark::before {
   opacity: 1;
 }
 
@@ -48,7 +50,8 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .fernMark:hover svg {
+  .fernMark:hover svg,
+  :global(.fern-sway-trigger):hover .fernMark svg {
     animation: fernSway 1.3s ease-in-out infinite;
   }
 }

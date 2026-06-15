@@ -19,7 +19,7 @@ export function Nav() {
   const toggleColorScheme = () => setColorScheme(computed === "dark" ? "light" : "dark")
 
   return (
-    <Box component="header" className={styles.nav}>
+    <Box component="header" className={`${styles.nav} fern-sway-trigger`}>
       <Container>
         <Group justify="space-between" align="center" className={styles.inner} wrap="nowrap">
           <a className={styles.brand} href="#top">
@@ -74,8 +74,9 @@ export function Nav() {
               variant="default"
               size="sm"
               leftSection={<DownloadIcon />}
+              className={styles.resumeBtn}
             >
-              resume.pdf
+              <span className={styles.resumeLabel}>resume.pdf</span>
             </Button>
           </Group>
         </Group>

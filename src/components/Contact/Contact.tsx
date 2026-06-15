@@ -44,7 +44,7 @@ export function Contact() {
                 size="md"
                 leftSection={<DownloadIcon />}
               >
-                Download résumé
+                Download resume
               </Button>
             </Group>
           </div>
@@ -78,8 +78,8 @@ export function Contact() {
               <span>&quot;© 2026 {PROFILE.name}&quot;</span>
             </Group>
             <Group gap={7} className={clsx(styles.footerItem, "mono")}>
-              <span className="dot" style={{ display: "inline-block" }} /> senior frontend →
-              full-stack
+              <span className="dot" style={{ display: "inline-block" }} /> senior frontend engineer
+              → full-stack
             </Group>
           </Group>
         </Box>

@@ -53,6 +53,23 @@
     display: none;
   }
 }
+@media (max-width: 600px) {
+  /* keep the header on a single row on narrow screens */
+  .brandRole {
+    display: none;
+  }
+  /* collapse the resume button to a square, centred icon-only button */
+  .resumeLabel {
+    display: none;
+  }
+  .resumeBtn {
+    width: var(--button-height-sm);
+    padding-inline: 0;
+  }
+  .resumeBtn :global(.mantine-Button-section[data-position="left"]) {
+    margin-inline-end: 0;
+  }
+}
 
 /* theme toggle switch */
 .themeToggle {
