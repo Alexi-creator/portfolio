@@ -75,13 +75,11 @@ export function Contact() {
           <Group justify="space-between" gap={16} wrap="wrap">
             <Group gap={8} className={clsx(styles.footerItem, "mono")}>
               <Fern size={24} style={{ color: "var(--accent)" }} />
-              <span>
-                <span className="accent">$</span> echo &quot;© 2026 {PROFILE.name}&quot;
-              </span>
+              <span>&quot;© 2026 {PROFILE.name}&quot;</span>
             </Group>
             <Group gap={7} className={clsx(styles.footerItem, "mono")}>
-              <span className="dot" style={{ display: "inline-block" }} /> frontend architecture →
-              full-stack · made in Aotearoa
+              <span className="dot" style={{ display: "inline-block" }} /> senior frontend →
+              full-stack
             </Group>
           </Group>
         </Box>
