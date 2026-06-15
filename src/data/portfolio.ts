@@ -102,11 +102,17 @@ export const PROJECTS: Project[] = [
       { metric: "100%", label: "responsive, mobile-first layouts down to 360px" },
     ],
     images: [
-      { src: "/images/01-cashflowy-landing.png", caption: "Landing — hero & value proposition" },
-      { src: "/images/02-cashflowy-landing.png", caption: "Cash-flow chart with income vs. spend" },
-      { src: "/images/01-cashflowy-dash.png", caption: "Dashboard — overview with balance KPIs" },
-      { src: "/images/03-cashflowy-dash.png", caption: "Analytics module — trends & savings rate" },
-      { src: "/images/04-cashflowy-dash.png", caption: "Investments — portfolio & allocation" },
+      { src: "/images/01-cashflowy-landing.webp", caption: "Landing — hero & value proposition" },
+      {
+        src: "/images/02-cashflowy-landing.webp",
+        caption: "Cash-flow chart with income vs. spend",
+      },
+      { src: "/images/01-cashflowy-dash.webp", caption: "Dashboard — overview with balance KPIs" },
+      {
+        src: "/images/03-cashflowy-dash.webp",
+        caption: "Analytics module — trends & savings rate",
+      },
+      { src: "/images/04-cashflowy-dash.webp", caption: "Investments — portfolio & allocation" },
     ],
   },
   {
@@ -148,9 +154,9 @@ export const PROJECTS: Project[] = [
     ],
     note: "Employer product — gallery shows placeholders. Drop real screenshots into public/images/awin-*.png to replace.",
     images: [
-      { src: "/images/awin-1.png", caption: "Unified personal account" },
-      { src: "/images/awin-2.png", caption: "Admin panel" },
-      { src: "/images/awin-3.png", caption: "Shared core platform" },
+      { src: "/images/awin-1.webp", caption: "Unified personal account" },
+      { src: "/images/awin-2.webp", caption: "Admin panel" },
+      { src: "/images/awin-3.webp", caption: "Shared core platform" },
     ],
   },
   {
@@ -182,9 +188,9 @@ export const PROJECTS: Project[] = [
     ],
     note: "Employer product — gallery shows placeholders. Drop real screenshots into public/images/finanso-*.png to replace.",
     images: [
-      { src: "/images/finanso-1.png", caption: "Personal account" },
-      { src: "/images/finanso-2.png", caption: "Marketing site" },
-      { src: "/images/finanso-3.png", caption: "Real-time debt service" },
+      { src: "/images/finanso-1.webp", caption: "Personal account" },
+      { src: "/images/finanso-2.webp", caption: "Marketing site" },
+      { src: "/images/finanso-3.webp", caption: "Real-time debt service" },
     ],
   },
 ]
