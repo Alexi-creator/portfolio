@@ -48,7 +48,7 @@ jobs:
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
           set -e
-          TARGET="${DEPLOY_PATH:-/var/www/portfolio}"
+          TARGET="${DEPLOY_PATH:-/var/www/elijah-pavlov}"
           # --delete: remove files on the server that no longer exist in the build.
           # Trailing slash on out/ copies the folder contents, not the folder itself.
           rsync -az --delete \
