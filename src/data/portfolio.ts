@@ -80,12 +80,12 @@ export const STATS: Stat[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "cashflowy",
-    name: "Cashflowy",
+    id: "limebalance",
+    name: "Limebalance",
     tagline: "Personal finance dashboard — budgets, goals & crypto in one place",
     meta: { role: "Frontend Architecture & Build", year: "2026", type: "Product · SPA" },
     live: [
-      { label: "Landing", href: "../Cashflowy.html" },
+      { label: "Landing", href: "../Limebalance.html" },
       { label: "Dashboard", href: "../Dashboard.html" },
     ],
     description:
@@ -102,17 +102,17 @@ export const PROJECTS: Project[] = [
       { metric: "100%", label: "responsive, mobile-first layouts down to 360px" },
     ],
     images: [
-      { src: "/images/01-cashflowy-landing.webp", caption: "Landing — hero & value proposition" },
+      { src: "/images/01-limebalance-landing.webp", caption: "Landing — hero & value proposition" },
       {
-        src: "/images/02-cashflowy-landing.webp",
+        src: "/images/02-limebalance-landing.webp",
         caption: "Cash-flow chart with income vs. spend",
       },
-      { src: "/images/01-cashflowy-dash.webp", caption: "Dashboard — overview with balance KPIs" },
+      { src: "/images/01-limebalance-dash.webp", caption: "Dashboard — overview with balance KPIs" },
       {
-        src: "/images/03-cashflowy-dash.webp",
+        src: "/images/03-limebalance-dash.webp",
         caption: "Analytics module — trends & savings rate",
       },
-      { src: "/images/04-cashflowy-dash.webp", caption: "Investments — portfolio & allocation" },
+      { src: "/images/04-limebalance-dash.webp", caption: "Investments — portfolio & allocation" },
     ],
   },
   {
