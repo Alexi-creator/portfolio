@@ -2,10 +2,15 @@ import "@mantine/core/styles.css"
 import "./globals.css"
 
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from "@mantine/core"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import clsx from "clsx"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { theme } from "@/theme"
+
+// Load GA only in production and only when the measurement ID is configured,
+// so local development doesn't pollute analytics with fake page views.
+const gaId = process.env.NODE_ENV === "production" ? process.env.NEXT_PUBLIC_GA_ID : undefined
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +43,7 @@ export default function RootLayout({
           {children}
         </MantineProvider>
       </body>
+      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   )
 }
