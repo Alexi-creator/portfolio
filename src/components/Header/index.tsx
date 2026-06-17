@@ -1,13 +1,15 @@
 "use client"
 
 import { Box, Button, Group, useComputedColorScheme, useMantineColorScheme } from "@mantine/core"
-import { Container } from "@/components/ui/Container"
-import { Fern } from "@/components/ui/Fern"
-import { DownloadIcon, KiwiIcon, SunIcon } from "@/components/ui/icons"
 import { PROFILE } from "@/data/portfolio"
-import styles from "./Nav.module.css"
+import { DownloadIcon } from "@/icons/DownloadIcon"
+import { KiwiIcon } from "@/icons/KiwiIcon"
+import { SunIcon } from "@/icons/SunIcon"
+import { Container } from "@/ui/Container"
+import { Fern } from "@/ui/Fern"
+import styles from "./index.module.css"
 
-export function Nav() {
+export function Header() {
   // keepTransitions: otherwise Mantine injects a style on scheme change that kills
   // ALL transitions (`* { transition: none !important }`), so the knob animation
   // never runs. With this flag the theme switches smoothly.

@@ -85,19 +85,34 @@ export const PROJECTS: Project[] = [
     tagline: "Personal finance dashboard — budgets, goals & crypto in one place",
     meta: { role: "Frontend Architecture & Build", year: "2026", type: "Product · SPA" },
     live: [
-      { label: "Landing", href: "../Limebalance.html" },
-      { label: "Dashboard", href: "../Dashboard.html" },
+      // { label: "Landing", href: "../Limebalance.html" },
+      { label: "Dashboard", href: "https://app.limebalance.com/" },
     ],
     description:
-      "A token-driven finance product spanning a marketing site and a six-module dashboard. Built on a Mantine-aligned design system with full EN/RU localization, a light/dark theme engine, and live SVG-rendered charts for cash-flow, analytics and portfolio allocation.",
-    stack: ["React", "TypeScript", "Mantine", "TanStack Query", "i18next", "SVG Charts", "Vite"],
+      "A token-driven finance product spanning a marketing site and a six-module dashboard. Built on a Mantine-aligned design system with full internationalization, a light/dark theme engine, and live SVG-rendered charts for cash-flow, analytics and portfolio allocation.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Zustand",
+      "Zod",
+      "TanStack Query",
+      "Vite",
+      "Biome",
+      "Mantine",
+      "i18next",
+      "oauth/google",
+      "React-hook-form",
+    ],
     highlights: [
       {
         metric: "6",
         label:
           "dashboard modules — overview, transactions, analytics, goals, investments, categories",
       },
-      { metric: "EN · RU", label: "full i18next localization with instant in-app switch" },
+      {
+        metric: "Any language",
+        label: "i18next architecture localizes the whole app to any locale — instant in-app switch",
+      },
       { metric: "Light / Dark", label: "theming driven entirely by a Mantine token scale" },
       { metric: "100%", label: "responsive, mobile-first layouts down to 360px" },
     ],
@@ -107,7 +122,10 @@ export const PROJECTS: Project[] = [
         src: "/images/02-limebalance-landing.webp",
         caption: "Cash-flow chart with income vs. spend",
       },
-      { src: "/images/01-limebalance-dash.webp", caption: "Dashboard — overview with balance KPIs" },
+      {
+        src: "/images/01-limebalance-dash.webp",
+        caption: "Dashboard — overview with balance KPIs",
+      },
       {
         src: "/images/03-limebalance-dash.webp",
         caption: "Analytics module — trends & savings rate",

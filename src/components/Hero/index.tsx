@@ -1,17 +1,17 @@
-import { Button, Grid, Group, SimpleGrid, Text, Title } from "@mantine/core"
+import { Button, Grid, GridCol, Group, SimpleGrid, Text, Title } from "@mantine/core"
 import clsx from "clsx"
-import { Container } from "@/components/ui/Container"
-import { Section } from "@/components/ui/Section"
-import { StarNZ } from "@/components/ui/StarNZ"
 import { PROFILE, STATS } from "@/data/portfolio"
-import styles from "./Hero.module.css"
+import { Container } from "@/ui/Container"
+import { Section } from "@/ui/Section"
+import { StarNZ } from "@/ui/StarNZ"
+import styles from "./index.module.css"
 
 export function Hero() {
   return (
     <Section id="about">
       <Container>
         <Grid gap={56} align="center" className={styles.layer}>
-          <Grid.Col span={{ base: 12, md: 7 }}>
+          <GridCol span={{ base: 12, md: 7 }}>
             <div className={styles.rise}>
               <span className={styles.eyebrow}>
                 <span className="dot" /> {PROFILE.location}
@@ -34,9 +34,9 @@ export function Hero() {
                 </Button>
               </Group>
             </div>
-          </Grid.Col>
+          </GridCol>
 
-          <Grid.Col span={{ base: 12, md: 5 }}>
+          <GridCol span={{ base: 12, md: 5 }}>
             <div className={clsx(styles.term, styles.rise)} style={{ animationDelay: ".08s" }}>
               <div className={styles.termBar}>
                 <span className={styles.tdot} style={{ background: "#FA5252" }} />
@@ -73,7 +73,7 @@ export function Hero() {
                 </div>
               </div>
             </div>
-          </Grid.Col>
+          </GridCol>
         </Grid>
 
         <SimpleGrid className={styles.layer} cols={{ base: 2, sm: 4 }} spacing="var(--gap)" mt={64}>

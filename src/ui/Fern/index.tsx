@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react"
-import styles from "./Fern.module.css"
+import styles from "./index.module.css"
 
 /* Silver fern (NZ) — generated procedurally. One central stem (rachis) with paired
    leaflets (pinnae): longer at the base, shorter toward the tip; each leaflet is a

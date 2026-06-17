@@ -3,7 +3,7 @@
 import clsx from "clsx"
 import { useCallback, useEffect } from "react"
 import type { Project } from "@/data/portfolio"
-import styles from "./Lightbox.module.css"
+import styles from "./index.module.css"
 
 interface LightboxProps {
   project: Project

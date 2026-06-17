@@ -1,4 +1,4 @@
-import styles from "./StarNZ.module.css"
+import styles from "./index.module.css"
 
 // Star from the New Zealand flag.
 export function StarNZ() {

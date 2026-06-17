@@ -1,12 +1,14 @@
 import { Box, Button, Group, SimpleGrid, Stack, Text, Title } from "@mantine/core"
 import clsx from "clsx"
-import { Container } from "@/components/ui/Container"
-import { Fern } from "@/components/ui/Fern"
-import { ArrowIcon, DownloadIcon, MailIcon } from "@/components/ui/icons"
-import { Section } from "@/components/ui/Section"
-import { SectionLabel } from "@/components/ui/SectionLabel"
 import { PROFILE } from "@/data/portfolio"
-import styles from "./Contact.module.css"
+import { ArrowIcon } from "@/icons/ArrowIcon"
+import { DownloadIcon } from "@/icons/DownloadIcon"
+import { MailIcon } from "@/icons/MailIcon"
+import { Container } from "@/ui/Container"
+import { Fern } from "@/ui/Fern"
+import { Section } from "@/ui/Section"
+import { SectionLabel } from "@/ui/SectionLabel"
+import styles from "./index.module.css"
 
 export function Contact() {
   return (

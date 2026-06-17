@@ -1,7 +1,7 @@
 import { Box, Divider } from "@mantine/core"
 import clsx from "clsx"
 import type { CSSProperties, ReactNode } from "react"
-import styles from "./Section.module.css"
+import styles from "./index.module.css"
 
 interface SectionProps {
   id?: string

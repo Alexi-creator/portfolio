@@ -50,8 +50,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .fernMark:hover svg,
-  :global(.fern-sway-trigger):hover .fernMark svg {
-    animation: fernSway 1.3s ease-in-out infinite;
+  .fernMark svg {
+    animation: fernSway 2s ease-in-out infinite;
   }
 }

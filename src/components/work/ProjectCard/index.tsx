@@ -1,7 +1,8 @@
 import { Badge, Box, Button, Flex, Group, Paper, Text, Title } from "@mantine/core"
-import { ArrowIcon, ExpandIcon } from "@/components/ui/icons"
 import type { Project } from "@/data/portfolio"
-import styles from "./ProjectCard.module.css"
+import { ArrowIcon } from "@/icons/ArrowIcon"
+import { ExpandIcon } from "@/icons/ExpandIcon"
+import styles from "./index.module.css"
 
 export type OpenLightbox = (project: Project, index: number) => void
 
