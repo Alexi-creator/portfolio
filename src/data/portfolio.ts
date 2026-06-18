@@ -83,16 +83,21 @@ export const PROJECTS: Project[] = [
     id: "limebalance",
     name: "Limebalance",
     tagline: "Personal finance dashboard — budgets, goals & crypto in one place",
-    meta: { role: "Frontend Architecture & Build", year: "2026", type: "Product · SPA" },
+    meta: { role: "Full-stack", year: "2026", type: "Product · SPA" },
     live: [
-      // { label: "Landing", href: "../Limebalance.html" },
       { label: "Dashboard", href: "https://app.limebalance.com/" },
+      { label: "GitHub - backend", href: "https://github.com/Alexi-creator/limebalance" },
+      { label: "GitHub - frontend", href: "https://github.com/Alexi-creator/limebalance-cab" },
     ],
     description:
-      "A token-driven finance product spanning a marketing site and a six-module dashboard. Built on a Mantine-aligned design system with full internationalization, a light/dark theme engine, and live SVG-rendered charts for cash-flow, analytics and portfolio allocation.",
+      "A token-driven finance product spanning a marketing site and a six-module dashboard. Built on a Mantine-aligned design system with full internationalization, a light/dark theme engine, and live SVG-rendered charts for LimeBalance, analytics and portfolio allocation.",
     stack: [
       "React",
       "TypeScript",
+      "NestJs",
+      "Postgres",
+      "JWT",
+      "Prisma",
       "Zustand",
       "Zod",
       "TanStack Query",
@@ -102,10 +107,11 @@ export const PROJECTS: Project[] = [
       "i18next",
       "oauth/google",
       "React-hook-form",
+      "CI-CD Actions",
     ],
     highlights: [
       {
-        metric: "6",
+        metric: "5",
         label:
           "dashboard modules — overview, transactions, analytics, goals, investments, categories",
       },
@@ -117,20 +123,36 @@ export const PROJECTS: Project[] = [
       { metric: "100%", label: "responsive, mobile-first layouts down to 360px" },
     ],
     images: [
-      { src: "/images/01-limebalance-landing.webp", caption: "Landing — hero & value proposition" },
       {
-        src: "/images/02-limebalance-landing.webp",
-        caption: "Cash-flow chart with income vs. spend",
+        src: "/images/overview.webp",
+        caption:
+          "Overview — balance, income, spend & savings at a glance, with a cash-flow chart and live goal progress",
       },
       {
-        src: "/images/01-limebalance-dash.webp",
-        caption: "Dashboard — overview with balance KPIs",
+        src: "/images/categories.webp",
+        caption:
+          "Categories — every expense bucket ranked by spend, with transaction counts and all-time totals",
       },
       {
-        src: "/images/03-limebalance-dash.webp",
-        caption: "Analytics module — trends & savings rate",
+        src: "/images/transactions.webp",
+        caption:
+          "Transactions — searchable, filterable ledger with inline edit, CSV export and fast pagination over thousands of rows",
       },
-      { src: "/images/04-limebalance-dash.webp", caption: "Investments — portfolio & allocation" },
+      {
+        src: "/images/analytics-1.webp",
+        caption:
+          "Analytics — income, expenses, saved and savings-rate KPIs with period-over-period trends and an income-vs-expenses chart",
+      },
+      {
+        src: "/images/analytics-2.webp",
+        caption:
+          "Analytics — spend broken down by category with a clear comparison of where spending changed vs. the previous period",
+      },
+      {
+        src: "/images/goals.webp",
+        caption:
+          "Goals — savings targets with progress, amount left and the monthly pace needed to hit each deadline",
+      },
     ],
   },
   {
@@ -222,6 +244,7 @@ export const SKILLS: SkillGroup[] = [
       "TypeScript",
       "JavaScript (ES6+)",
       "Redux",
+      "Zustand",
       "TanStack Query",
       "React Hook Form",
       "Zod",

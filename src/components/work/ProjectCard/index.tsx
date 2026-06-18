@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Flex, Group, Paper, Text, Title } from "@mantine/core"
+import { Badge, Box, Button, Flex, Group, Paper, Stack, Text, Title } from "@mantine/core"
 import type { Project } from "@/data/portfolio"
 import { ArrowIcon } from "@/icons/ArrowIcon"
 import { ExpandIcon } from "@/icons/ExpandIcon"
@@ -53,7 +53,7 @@ export function ProjectCard({ p, onOpen }: ProjectCardProps) {
             {p.tagline}
           </Text>
         </div>
-        <Group gap={10} style={{ flexShrink: 0 }}>
+        <Stack gap={10} style={{ flexShrink: 0 }}>
           {p.live.length > 0 ? (
             p.live.map((l) => (
               <Button
@@ -72,7 +72,7 @@ export function ProjectCard({ p, onOpen }: ProjectCardProps) {
           ) : (
             <StackBadge color="var(--muted)">private · employer product</StackBadge>
           )}
-        </Group>
+        </Stack>
       </Flex>
 
       <Text mt={24} fz={15} c="var(--fg-2)" maw={760}>
