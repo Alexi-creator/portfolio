@@ -108,6 +108,8 @@ export const PROJECTS: Project[] = [
       "oauth/google",
       "React-hook-form",
       "CI-CD Actions",
+      "Playwright",
+      "Jest",
     ],
     highlights: [
       {
@@ -119,8 +121,14 @@ export const PROJECTS: Project[] = [
         metric: "Any language",
         label: "i18next architecture localizes the whole app to any locale — instant in-app switch",
       },
-      { metric: "Light / Dark", label: "theming driven entirely by a Mantine token scale" },
-      { metric: "100%", label: "responsive, mobile-first layouts down to 360px" },
+      {
+        metric: "Light / Dark",
+        label: "theming driven entirely by a Mantine token scale",
+      },
+      {
+        metric: "100%",
+        label: "responsive, mobile-first layouts down to 360px",
+      },
     ],
     images: [
       {
@@ -190,7 +198,10 @@ export const PROJECTS: Project[] = [
         metric: "4+",
         label: "projects reuse the modular React core; new-project setup 30% faster",
       },
-      { metric: "−25%", label: "deployment time via Docker CI/CD pipelines & coding standards" },
+      {
+        metric: "−25%",
+        label: "deployment time via Docker CI/CD pipelines & coding standards",
+      },
     ],
     note: "Employer product — gallery shows placeholders. Drop real screenshots into public/images/awin-*.png to replace.",
     images: [

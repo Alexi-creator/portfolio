@@ -17,7 +17,7 @@ export function Hero() {
                 <span className="dot" /> {PROFILE.location}
               </span>
               <Title order={1} mt={22}>
-                Hi there! I architect frontends
+                Hi there! 👋 I architect frontends
                 <br />
                 that scale
                 <StarNZ />
