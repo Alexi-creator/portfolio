@@ -15,6 +15,7 @@
   align-items: center;
   gap: 11px;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .brandMark {
   width: 30px;

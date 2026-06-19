@@ -1,9 +1,8 @@
-import { Box, Button, Group, SimpleGrid, Stack, Text, Title } from "@mantine/core"
+import { Box, Group, SimpleGrid, Stack, Text, Title } from "@mantine/core"
 import clsx from "clsx"
 import { PROFILE } from "@/data/portfolio"
 import { ArrowIcon } from "@/icons/ArrowIcon"
 import { DownloadIcon } from "@/icons/DownloadIcon"
-import { MailIcon } from "@/icons/MailIcon"
 import { Container } from "@/ui/Container"
 import { Fern } from "@/ui/Fern"
 import { Section } from "@/ui/Section"
@@ -16,7 +15,7 @@ export function Contact() {
       <Container>
         <SectionLabel idx="03">get in touch</SectionLabel>
 
-        <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={56} style={{ alignItems: "start" }}>
+        <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={56} style={{ alignItems: "center" }}>
           <div>
             <Title order={2}>
               Let&apos;s build something
@@ -28,40 +27,30 @@ export function Contact() {
               production work. The fastest way to reach me is email; résumé attached for the
               details.
             </Text>
-            <Group gap={12} mt={26}>
-              <Button
-                component="a"
-                href={`mailto:${PROFILE.email}`}
-                variant="filled"
-                size="md"
-                leftSection={<MailIcon />}
-              >
-                {PROFILE.email}
-              </Button>
-              <Button
-                component="a"
-                href={PROFILE.resume}
-                download
-                variant="default"
-                size="md"
-                leftSection={<DownloadIcon />}
-              >
-                Download resume
-              </Button>
-            </Group>
           </div>
 
           <Stack gap={10}>
+            <a
+              className={clsx(styles.row, styles.rowAccent)}
+              href={PROFILE.linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className={clsx(styles.key, "mono")}>linkedin</span>
+              <span className={styles.val}>
+                {PROFILE.linkedin} <ArrowIcon />
+              </span>
+            </a>
+            <a className={styles.row} href={PROFILE.telegramUrl} target="_blank" rel="noreferrer">
+              <span className={clsx(styles.key, "mono")}>telegram</span>
+              <span className={styles.val}>
+                {PROFILE.telegram} <ArrowIcon />
+              </span>
+            </a>
             <a className={styles.row} href={`mailto:${PROFILE.email}`}>
               <span className={clsx(styles.key, "mono")}>email</span>
               <span className={styles.val}>
                 {PROFILE.email} <ArrowIcon />
-              </span>
-            </a>
-            <a className={styles.row} href={PROFILE.linkedinUrl} target="_blank" rel="noreferrer">
-              <span className={clsx(styles.key, "mono")}>linkedin</span>
-              <span className={styles.val}>
-                {PROFILE.linkedin} <ArrowIcon />
               </span>
             </a>
             <a className={styles.row} href={PROFILE.resume} download>

@@ -72,7 +72,8 @@ export function Header() {
             <Button
               component="a"
               href={PROFILE.resume}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               variant="default"
               size="sm"
               leftSection={<DownloadIcon />}

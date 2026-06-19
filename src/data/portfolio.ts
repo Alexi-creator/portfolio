@@ -8,6 +8,8 @@ export interface Profile {
   email: string
   linkedin: string
   linkedinUrl: string
+  telegram: string
+  telegramUrl: string
   resume: string
   summary: string
 }
@@ -65,6 +67,8 @@ export const PROFILE: Profile = {
   email: "pavlov.il.creator@gmail.com",
   linkedin: "linkedin.com/in/illpavlov",
   linkedinUrl: "https://linkedin.com/in/illpavlov",
+  telegram: "@ilya_pavlov90",
+  telegramUrl: "https://t.me/ilya_pavlov90",
   resume: "/Elijah_Pavlov_Resume.pdf",
   summary:
     "Senior Frontend Engineer with 7+ years building scalable web applications in React, Next.js and TypeScript. I architect microfrontend systems, drive performance and testing strategy across teams, and define the engineering standards that keep delivery fast and stable. Currently expanding into full-stack with Node.js and NestJS.",

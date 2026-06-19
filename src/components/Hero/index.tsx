@@ -29,8 +29,15 @@ export function Hero() {
                 <Button component="a" href="#work" variant="filled" size="md">
                   View selected work →
                 </Button>
-                <Button component="a" href={`mailto:${PROFILE.email}`} variant="default" size="md">
-                  Get in touch
+                <Button
+                  component="a"
+                  href={PROFILE.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="default"
+                  size="md"
+                >
+                  LinkedIn
                 </Button>
               </Group>
             </div>
