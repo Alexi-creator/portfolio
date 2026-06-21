@@ -101,15 +101,17 @@ export function ProjectCard({ p, onOpen }: ProjectCardProps) {
       </div>
 
       {/* gallery */}
-      <Text ff="monospace" fz="12.5px" c="dimmed" mt={32} mb={14}>
-        {`// gallery — ${p.images.length} screens`}
-        {p.note && (
-          <Text span inherit c="var(--dim)">
-            {" "}
-            · placeholders, drop real screens to replace
-          </Text>
-        )}
-      </Text>
+      {p.images.length > 0 && (
+        <Text ff="monospace" fz="12.5px" c="dimmed" mt={32} mb={14}>
+          {`// gallery — ${p.images.length} screens`}
+          {p.note && (
+            <Text span inherit c="var(--dim)">
+              {" "}
+              · placeholders, drop real screens to replace
+            </Text>
+          )}
+        </Text>
+      )}
       <div className={styles.gallery}>
         {p.images.map((img, i) => (
           <button
