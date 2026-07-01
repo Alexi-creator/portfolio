@@ -23,9 +23,9 @@ export function Contact() {
               resilient together<span className="accent">.</span>
             </Title>
             <Text mt={16} maw={440}>
-              Senior frontend by trade — now going full-stack with NestJS, Node.js and Postgres on
-              production work. The fastest way to reach me is email; résumé attached for the
-              details.
+              Full-stack engineer — REST APIs and NestJS/Node.js backends through to React/Next.js
+              frontends, shipped end to end in production. The fastest way to reach me is email;
+              résumé attached for the details.
             </Text>
           </div>
 
@@ -69,8 +69,8 @@ export function Contact() {
               <span>&quot;© 2026 {PROFILE.name}&quot;</span>
             </Group>
             <Group gap={7} className={clsx(styles.footerItem, "mono")}>
-              <span className="dot" style={{ display: "inline-block" }} /> senior frontend engineer
-              → full-stack
+              <span className="dot" style={{ display: "inline-block" }} /> full-stack engineer —
+              node.js · nestjs · react · next.js
             </Group>
           </Group>
         </Box>

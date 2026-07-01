@@ -17,9 +17,9 @@ export function Hero() {
                 <span className="dot" /> {PROFILE.location}
               </span>
               <Title order={1} mt={22}>
-                Hi there! 👋 I architect frontends
+                Hi there! 👋 I build full-stack
                 <br />
-                that scale
+                products that scale
                 <StarNZ />
               </Title>
               <Text fz={17} maw={560} mt={22} c="var(--fg-2)">
@@ -62,20 +62,20 @@ export function Hero() {
                   <span className="accent">$</span> cat focus.txt
                 </div>
                 <div className={styles.termOut}>
-                  architecture · performance · DX · testing · mentorship
+                  API design · architecture · performance · testing · mentorship
                 </div>
                 <div style={{ marginTop: 10 }}>
                   <span className="accent">$</span> stack --primary
                 </div>
                 <div className={styles.termOut}>
-                  React · Next.js · TypeScript · Node.js / NestJS
+                  Node.js / NestJS · React · Next.js · TypeScript · Postgres
                 </div>
                 <div style={{ marginTop: 10 }}>
                   <span className="accent">$</span> status
                 </div>
                 <div className={styles.termOut}>
                   <span className="dot" style={{ display: "inline-block", marginRight: 6 }} />
-                  expanding into full-stack — NestJS · Node.js · Postgres
+                  full-stack — backend & frontend, end to end
                   <span className={styles.cursor} />
                 </div>
               </div>

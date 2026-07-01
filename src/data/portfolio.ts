@@ -61,9 +61,9 @@ export interface SkillGroup {
 
 export const PROFILE: Profile = {
   name: "Elijah Pavlov",
-  role: "Senior Frontend Engineer",
-  subrole: "Full-Stack track · React / Next.js / Node.js / NestJS",
-  location: "Expanding into full-stack — NestJS · Node.js · Postgres",
+  role: "Full-Stack Engineer",
+  subrole: "Node.js / NestJS / React / Next.js / TypeScript",
+  location: "Full-stack across the entire stack — NestJS · Node.js · Postgres · React",
   email: "pavlov.il.creator@gmail.com",
   linkedin: "linkedin.com/in/illpavlov",
   linkedinUrl: "https://linkedin.com/in/illpavlov",
@@ -71,13 +71,13 @@ export const PROFILE: Profile = {
   telegramUrl: "https://t.me/ilya_pavlov90",
   resume: "/Elijah_Pavlov_Resume.pdf",
   summary:
-    "Senior Frontend Engineer with 7+ years building scalable web applications in React, Next.js and TypeScript. I architect microfrontend systems, drive performance and testing strategy across teams, and define the engineering standards that keep delivery fast and stable. Currently expanding into full-stack with Node.js and NestJS.",
+    "Full-Stack Engineer with 7+ years building production-grade web applications across the entire stack — from REST API design and NestJS/Node.js backends to scalable React/Next.js frontends. I own API contracts and integration logic alongside frontend architecture: microfrontend systems, 35% load-time improvement, and test coverage scaled from 15% to 75%. Experienced in system architecture, cross-functional collaboration with backend teams, and mentoring developers.",
 }
 
 // Headline metrics pulled from real impact at Awin
 export const STATS: Stat[] = [
-  { value: "7+", unit: "yrs", label: "shipping production frontend" },
-  { value: "−40", unit: "%", label: "bundle size via Module Federation" },
+  { value: "7+", unit: "yrs", label: "shipping full-stack in production" },
+  { value: "REST", unit: "API", label: "contracts & NestJS integration owned" },
   { value: "75", unit: "%", label: "test coverage, up from 15%" },
   { value: "−35", unit: "%", label: "page load time, Lighthouse-verified" },
 ]
@@ -173,42 +173,46 @@ export const PROJECTS: Project[] = [
     name: "Awin",
     tagline: "Unified account, admin panel & shared core platform across product lines",
     meta: {
-      role: "Senior Frontend Engineer",
+      role: "Full-Stack Engineer",
       year: "2022 — Present",
-      type: "Platform · Microfrontends",
+      type: "Platform · Full-Stack",
     },
     live: [],
     description:
-      "A unified personal account, admin panel and shared core platform used across multiple product lines. I owned frontend architecture, release stability and developer experience — building a reusable React core, a Module Federation microfrontend setup, and the testing and CI standards the teams ship on.",
+      "A unified personal account, admin panel and shared core platform used across multiple product lines. I contribute to the full delivery lifecycle — co-owning REST API contracts and NestJS schema/DTO validation with the backend team, building the Node.js integration layer to backend microservices, and owning the frontend architecture, testing and CI standards the teams ship on.",
     stack: [
       "React",
       "TypeScript",
+      "Node.js",
+      "NestJS",
+      "REST API",
+      "WebSocket",
+      "class-validator",
       "Module Federation",
       "Webpack",
       "Formik",
       "Styled components",
       "Mui",
-      "Css",
       "EsLint",
       "Storybook",
       "Playwright",
       "i18next",
-      "Node.js",
       "Docker",
       "GitLab CI/CD",
     ],
     highlights: [
       {
-        metric: "−40%",
-        label: "initial bundle size via Module Federation, with improved security isolation",
+        metric: "REST + WS",
+        label:
+          "API contracts co-owned with backend — NestJS DTO validation & Node.js integration layer",
       },
       {
         metric: "15 → 75%",
         label: "test coverage with Playwright E2E strategy — production bugs cut by 50%",
       },
       {
-        metric: "4+",
-        label: "projects reuse the modular React core; new-project setup 30% faster",
+        metric: "−40%",
+        label: "initial bundle size via Module Federation, with improved security isolation",
       },
       {
         metric: "−25%",
@@ -265,6 +269,20 @@ export const PROJECTS: Project[] = [
 
 export const SKILLS: SkillGroup[] = [
   {
+    group: "Backend",
+    items: [
+      "Node.js",
+      "NestJS",
+      "Fastify",
+      "REST API design & validation",
+      "GraphQL",
+      "WebSocket",
+      "PostgreSQL",
+      "Prisma",
+      "API schema contracts",
+    ],
+  },
+  {
     group: "Frontend",
     items: [
       "React",
@@ -279,6 +297,15 @@ export const SKILLS: SkillGroup[] = [
     ],
   },
   {
+    group: "Architecture",
+    items: [
+      "Microfrontends",
+      "Webpack Module Federation",
+      "SSR / SSG",
+      "Monorepo / Git submodules",
+    ],
+  },
+  {
     group: "UI / Styling",
     items: [
       "Mantine",
@@ -290,14 +317,6 @@ export const SKILLS: SkillGroup[] = [
       "Ant Design",
       "Storybook",
     ],
-  },
-  {
-    group: "Backend (Full-Stack)",
-    items: ["Node.js", "NestJS", "PostgreSQL", "Fastify", "REST API", "GraphQL", "WebSocket"],
-  },
-  {
-    group: "Architecture",
-    items: ["Microfrontends", "Webpack Module Federation", "SSR / SSG"],
   },
   {
     group: "Testing",

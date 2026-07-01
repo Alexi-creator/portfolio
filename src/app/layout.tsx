@@ -23,9 +23,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Elijah Pavlov — Senior Frontend Engineer",
+  title: "Elijah Pavlov — Full-Stack Engineer",
   description:
-    "Senior Frontend Engineer with 7+ years in React, Next.js and TypeScript — architecting scalable frontends and expanding into full-stack with Node.js / NestJS.",
+    "Full-Stack Engineer with 7+ years building production apps across the stack — REST API design and NestJS/Node.js backends through to scalable React/Next.js frontends.",
 }
 
 export default function RootLayout({
