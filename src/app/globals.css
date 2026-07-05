@@ -44,8 +44,8 @@
 /* light theme is driven by Mantine's color scheme */
 [data-mantine-color-scheme="light"] {
   --tg-knob-x: 22px;
-  --bg: #ffffff;
-  --bg-2: #f1f3f5;
+  --bg: #f8f9fb;
+  --bg-2: #eff1f4;
   --surface: #ffffff;
   --surface-2: #f1f3f5;
   --surface-3: #f8f9fa;
