@@ -36,25 +36,25 @@ Senior Frontend Engineer with **7+ years** building scalable web applications in
 
 ## 🚀 Running locally
 
-Requires **Node.js 18.18+** and npm.
+Requires **Node.js 18.18+** and [Bun](https://bun.sh).
 
 ```bash
 # install dependencies
-npm install
+bun install
 
 # start the dev server (http://localhost:3000)
-npm run dev
+bun run dev
 ```
 
 ### Other scripts
 
 | Command | What it does |
 |---|---|
-| `npm run dev` | Start the dev server with hot reload |
-| `npm run build` | Production build |
-| `npm run start` | Serve the production build |
-| `npm run lint` | Lint with Biome |
-| `npm run format` | Auto-format with Biome |
+| `bun run dev` | Start the dev server with hot reload |
+| `bun run build` | Production build |
+| `bun run start` | Serve the production build |
+| `bun run lint` | Lint with Biome |
+| `bun run format` | Auto-format with Biome |
 
 ## 🧱 Built with
 

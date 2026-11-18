@@ -5,11 +5,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # dev server on http://localhost:4000 (not 3000)
-npm run build    # production build -> static export in out/
-npm run start    # serve the production build
-npm run lint     # biome check .
-npm run format   # biome format --write .
+bun run dev      # dev server on http://localhost:4000 (not 3000)
+bun run build    # production build -> static export in out/
+bun run start    # serve the production build
+bun run lint     # biome check .
+bun run format   # biome format --write .
 ```
 
 There is no test suite (no test runner configured, no test files in the repo).
