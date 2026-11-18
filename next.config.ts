@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
 
   // Trailing slash is friendlier for static hosting (each route -> index.html).
   trailingSlash: true,
+
+  // Allow opening the dev server from other devices on the local network
+  // (e.g. http://192.168.1.4:4000); Next blocks cross-origin dev resources by default.
+  allowedDevOrigins: ["192.168.*.*"],
 }
 
 export default nextConfig

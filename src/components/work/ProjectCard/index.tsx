@@ -121,7 +121,6 @@ export function ProjectCard({ p, onOpen }: ProjectCardProps) {
             onClick={() => onOpen(p, i)}
             aria-label={`Open ${img.caption}`}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={img.src} alt={img.caption} loading="lazy" />
             <span className={styles.expand}>
               <ExpandIcon />

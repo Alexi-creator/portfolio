@@ -64,7 +64,6 @@ export function Lightbox({ project, index, onClose, onNav }: LightboxProps) {
         ‹
       </button>
       <div className={styles.stage}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={img.src} alt={img.caption} />
         <div className={clsx(styles.cap, "mono")}>{img.caption}</div>
       </div>
