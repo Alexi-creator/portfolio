@@ -61,9 +61,9 @@ export interface SkillGroup {
 
 export const PROFILE: Profile = {
   name: "Elijah Pavlov",
-  role: "Full-Stack Engineer",
-  subrole: "Node.js / NestJS / React / Next.js / TypeScript",
-  location: "Full-stack across the entire stack — NestJS · Node.js · Postgres · React",
+  role: "Full-Stack & AI Engineer",
+  subrole: "Node.js / NestJS / React / Next.js / TypeScript / PostgreSQL / LLM & RAG",
+  location: "Full-stack & applied AI — NestJS · Postgres · React · LLM / RAG",
   email: "pavlov.il.creator@gmail.com",
   linkedin: "linkedin.com/in/illpavlov",
   linkedinUrl: "https://linkedin.com/in/illpavlov",
@@ -71,68 +71,103 @@ export const PROFILE: Profile = {
   telegramUrl: "https://t.me/ilya_pavlov90",
   resume: "/Elijah_Pavlov_Resume.pdf",
   summary:
-    "Full-Stack Engineer with 7+ years building production-grade web applications across the entire stack — from REST API design and NestJS/Node.js backends to scalable React/Next.js frontends. I own API contracts and integration logic alongside frontend architecture: microfrontend systems, 35% load-time improvement, and test coverage scaled from 15% to 75%. Experienced in system architecture, cross-functional collaboration with backend teams, and mentoring developers.",
+    "Full-stack engineer with 7+ years of commercial experience across React/Next.js and Node.js, now focused on backend systems and applied AI. At LimeBalance, I design API contracts and NestJS services alongside frontend architecture work, and designed, built and operate a production personal-finance platform: a NestJS + PostgreSQL API, a RAG assistant with tool calling (Claude API, pgvector, self-hosted embeddings), Redis caching, OCR receipt scanning and full observability. Measure-first: model and retrieval choices are backed by eval suites and benchmarks, not intuition.",
 }
 
-// Headline metrics pulled from real impact at Awin
+// Headline metrics pulled from real impact at LimeBalance
 export const STATS: Stat[] = [
   { value: "7+", unit: "yrs", label: "shipping full-stack in production" },
-  { value: "REST", unit: "API", label: "contracts & NestJS integration owned" },
-  { value: "75", unit: "%", label: "test coverage, up from 15%" },
-  { value: "−35", unit: "%", label: "page load time, Lighthouse-verified" },
+  { value: "70", unit: "evals", label: "retrieval & answer cases gating AI releases" },
+  { value: "75", unit: "%", label: "E2E test coverage, up from 15%" },
+  { value: "−40", unit: "%", label: "initial bundle via Module Federation" },
 ]
 
 export const PROJECTS: Project[] = [
   {
     id: "limebalance",
-    name: "Limebalance",
-    tagline: "Personal finance dashboard — budgets, goals & crypto in one place",
-    meta: { role: "Full-stack", year: "2026", type: "Product · SPA" },
+    name: "LimeBalance",
+    tagline:
+      "Personal-finance & trading-journal platform with a RAG assistant — plus a unified account, admin panel and shared core",
+    meta: {
+      role: "Full-Stack Engineer",
+      year: "2022 — Present",
+      type: "Platform · Full-Stack & AI",
+    },
     live: [
       { label: "Dashboard", href: "https://app.limebalance.com/" },
       { label: "GitHub - backend", href: "https://github.com/Alexi-creator/limebalance" },
       { label: "GitHub - frontend", href: "https://github.com/Alexi-creator/limebalance-cab" },
     ],
     description:
-      "A token-driven finance product spanning a marketing site and a six-module dashboard. Built on a Mantine-aligned design system with full internationalization, a light/dark theme engine, and live SVG-rendered charts for LimeBalance, analytics and portfolio allocation.",
+      "A production personal-finance and trading-journal platform — API, Telegram bot, web cabinet, admin panel and mobile app — that I designed, built and operate end to end, alongside a unified account platform, admin panel and shared core. One NestJS + Fastify API on Bun with PostgreSQL / Prisma serves all five apps; a RAG assistant with agentic tool calling (Claude API, self-hosted bge-m3 embeddings, pgvector) answers questions about users' finances in plain language, with eval suites as release gates, per-plan quotas and per-question cost tracking.",
     stack: [
-      "React",
+      "Node.js",
+      "Bun",
+      "NestJS",
+      "Fastify",
       "TypeScript",
-      "Module Css",
-      "NestJs",
-      "Postgres",
-      "JWT",
+      "PostgreSQL",
       "Prisma",
-      "Zustand",
+      "pgvector",
+      "Redis",
+      "Claude API",
+      "RAG",
+      "bge-m3",
+      "Tesseract OCR",
       "Zod",
+      "OpenAPI",
+      "JWT / OAuth",
+      "React",
+      "React Native (Expo)",
       "TanStack Query",
-      "Vite",
-      "Biome",
+      "Zustand",
       "Mantine",
       "i18next",
-      "oauth/google",
-      "React-hook-form",
-      "CI-CD Actions",
+      "Module Federation",
+      "Docker",
+      "GitHub Actions",
+      "Sentry",
+      "Grafana / Loki",
+      "Prometheus",
       "Playwright",
-      "Jest",
+      "Bun test",
     ],
     highlights: [
       {
-        metric: "5",
+        metric: "RAG + tools",
         label:
-          "dashboard modules — overview, transactions, analytics, goals, investments, categories",
+          "AI assistant on Claude API, bge-m3 & pgvector — 5 data tools reuse the app's own services, so answers always match the UI",
       },
       {
-        metric: "Any language",
-        label: "i18next architecture localizes the whole app to any locale — instant in-app switch",
+        metric: "70 evals",
+        label:
+          "37 retrieval (hit@k) + 33 answer cases act as release gates — prompt & model regressions caught before users",
       },
       {
-        metric: "Light / Dark",
-        label: "theming driven entirely by a Mantine token scale",
+        metric: "18 modules",
+        label:
+          "NestJS + Fastify API on Bun serving 5 apps — subscriptions, Bybit import, JWT / Google / Telegram login",
       },
       {
-        metric: "100%",
-        label: "responsive, mobile-first layouts down to 360px",
+        metric: "0 drift",
+        label:
+          "every request & response defined once in shared Zod schemas — validation, OpenAPI docs and 3 clients",
+      },
+      {
+        metric: "15 → 75%",
+        label: "E2E coverage with a Playwright test strategy — production bugs cut in half",
+      },
+      {
+        metric: "−40%",
+        label: "initial bundle by moving auth into a Module Federation microfrontend",
+      },
+      {
+        metric: "4+ projects",
+        label: "adopted the shared platform core — new project setup 30% faster",
+      },
+      {
+        metric: "−25%",
+        label: "deployment time via Docker pipelines & shared lint standards",
       },
     ],
     images: [
@@ -169,66 +204,13 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "awin",
-    name: "Awin",
-    tagline: "Unified account, admin panel & shared core platform across product lines",
-    meta: {
-      role: "Full-Stack Engineer",
-      year: "2022 — Present",
-      type: "Platform · Full-Stack",
-    },
-    live: [],
-    description:
-      "A unified personal account, admin panel and shared core platform used across multiple product lines. I contribute to the full delivery lifecycle — co-owning REST API contracts and NestJS schema/DTO validation with the backend team, building the Node.js integration layer to backend microservices, and owning the frontend architecture, testing and CI standards the teams ship on.",
-    stack: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "NestJS",
-      "REST API",
-      "WebSocket",
-      "class-validator",
-      "Module Federation",
-      "Webpack",
-      "Formik",
-      "Styled components",
-      "Mui",
-      "EsLint",
-      "Storybook",
-      "Playwright",
-      "i18next",
-      "Docker",
-      "GitLab CI/CD",
-    ],
-    highlights: [
-      {
-        metric: "REST + WS",
-        label:
-          "API contracts co-owned with backend — NestJS DTO validation & Node.js integration layer",
-      },
-      {
-        metric: "15 → 75%",
-        label: "test coverage with Playwright E2E strategy — production bugs cut by 50%",
-      },
-      {
-        metric: "−40%",
-        label: "initial bundle size via Module Federation, with improved security isolation",
-      },
-      {
-        metric: "−25%",
-        label: "deployment time via Docker CI/CD pipelines & coding standards",
-      },
-    ],
-    images: [],
-  },
-  {
     id: "finanso",
     name: "Finanso",
-    tagline: "Financial services platform — account, marketing site & real-time data",
+    tagline: "Financial services platform — account portal, marketing site & real-time data",
     meta: { role: "Frontend Developer", year: "2019 — 2022", type: "Platform · Real-time" },
     live: [{ label: "Site", href: "https://finanso.com/" }],
     description:
-      "A financial services platform combining a personal account, a multi-page marketing site and real-time data services. I modernized a legacy codebase, led a company-wide UI Kit, and built a real-time debt-information service integrated with the Federal Bailiff Service over WebSocket.",
+      "A financial services platform combining a personal account portal, a multi-page marketing site and real-time data services. I owned the entire frontend — from the component library and build tooling to project structure, the API integration layer and the release process — rewrote the legacy codebase onto a modern stack, and built a real-time WebSocket service for government debt-record data.",
     stack: [
       "JavaScript",
       "TypeScript",
@@ -244,19 +226,19 @@ export const PROJECTS: Project[] = [
     highlights: [
       {
         metric: "10K+",
-        label: "daily active users on the real-time WebSocket debt-information service",
+        label: "daily active users on the real-time WebSocket debt-record service",
       },
       {
         metric: "−40%",
-        label: "build time after modernizing the legacy Pug / Gulp / Webpack architecture",
+        label: "build time after rewriting the legacy Pug / Gulp / Webpack codebase",
       },
       {
         metric: "3 teams",
-        label: "adopted the company-wide SCSS UI Kit — pixel-perfect & responsive",
+        label: "adopted the company-wide UI kit",
       },
       {
         metric: "Real-time",
-        label: "instant data updates via Federal Bailiff Service integration",
+        label: "protocol & event schema co-designed with the backend team",
       },
     ],
     images: [
@@ -272,68 +254,82 @@ export const SKILLS: SkillGroup[] = [
     group: "Backend",
     items: [
       "Node.js",
+      "Bun",
       "NestJS",
       "Fastify",
-      "REST API design & validation",
-      "GraphQL",
+      "REST API design",
+      "Zod schema contracts",
+      "OpenAPI / Swagger",
+      "JWT / OAuth",
+      "Rate limiting",
+      "Cron jobs",
       "WebSocket",
-      "PostgreSQL",
-      "Prisma",
-      "API schema contracts",
+      "GraphQL",
     ],
+  },
+  {
+    group: "AI / LLM",
+    items: [
+      "RAG",
+      "Tool calling / agents",
+      "Claude API",
+      "Ollama",
+      "Embeddings (bge-m3)",
+      "Prompt design",
+      "Eval suites (hit@k)",
+      "LLM cost & token tracking",
+      "OCR (Tesseract)",
+    ],
+  },
+  {
+    group: "Data",
+    items: ["PostgreSQL", "pgvector", "Prisma", "Redis", "Distributed locks", "Lua"],
+  },
+  {
+    group: "Infrastructure & Observability",
+    items: [
+      "Docker",
+      "GitHub Actions",
+      "GitLab CI",
+      "Linux VPS",
+      "GHCR",
+      "Sentry",
+      "Grafana",
+      "Loki",
+      "Prometheus",
+      "Grafana Alloy",
+    ],
+  },
+  {
+    group: "Architecture & Tooling",
+    items: [
+      "Monorepos (Bun workspaces)",
+      "Shared typed packages",
+      "Microfrontends",
+      "Module Federation",
+      "TypeScript",
+      "Biome",
+      "ESLint",
+    ],
+  },
+  {
+    group: "Testing",
+    items: ["Bun test", "Jest", "Playwright (E2E)", "Property-style checks"],
   },
   {
     group: "Frontend",
     items: [
       "React",
       "Next.js",
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "Redux",
-      "Zustand",
+      "React Native (Expo)",
       "TanStack Query",
+      "Zustand",
       "React Hook Form",
-      "Zod",
-    ],
-  },
-  {
-    group: "Architecture",
-    items: [
-      "Microfrontends",
-      "Webpack Module Federation",
-      "SSR / SSG",
-      "Monorepo / Git submodules",
+      "i18next",
     ],
   },
   {
     group: "UI / Styling",
-    items: [
-      "Mantine",
-      "Tailwind CSS",
-      "Styled Components",
-      "SCSS",
-      "CSS Modules",
-      "MUI",
-      "Ant Design",
-      "Storybook",
-    ],
-  },
-  {
-    group: "Testing",
-    items: ["Playwright", "Jest", "End-to-End", "Unit Testing"],
-  },
-  {
-    group: "Tooling & DevOps",
-    items: [
-      "Webpack",
-      "Vite",
-      "Turbopack",
-      "Docker",
-      "GitLab CI/CD",
-      "ESLint",
-      "Biome",
-      "Git",
-      "Figma",
-    ],
+    items: ["Mantine", "Tailwind CSS", "CSS Modules", "SCSS", "Styled Components", "Storybook"],
   },
 ]

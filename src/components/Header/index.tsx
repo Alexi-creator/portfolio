@@ -30,7 +30,7 @@ export function Header() {
             </span>
             <span>
               <span className={styles.brandName}>Elijah Pavlov</span>
-              <span className={styles.brandRole}>full-stack engineer</span>
+              <span className={styles.brandRole}>full-stack & ai engineer</span>
             </span>
           </a>
 

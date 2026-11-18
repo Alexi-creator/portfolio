@@ -62,20 +62,20 @@ export function Hero() {
                   <span className="accent">$</span> cat focus.txt
                 </div>
                 <div className={styles.termOut}>
-                  API design · architecture · performance · testing · mentorship
+                  backend systems · applied AI · API design · observability · testing
                 </div>
                 <div style={{ marginTop: 10 }}>
                   <span className="accent">$</span> stack --primary
                 </div>
                 <div className={styles.termOut}>
-                  Node.js / NestJS · React · Next.js · TypeScript · Postgres
+                  Node.js / NestJS · Bun · PostgreSQL · React / Next.js · Claude API
                 </div>
                 <div style={{ marginTop: 10 }}>
                   <span className="accent">$</span> status
                 </div>
                 <div className={styles.termOut}>
                   <span className="dot" style={{ display: "inline-block", marginRight: 6 }} />
-                  full-stack — backend & frontend, end to end
+                  open to Full-Stack, Backend or AI Engineer roles
                   <span className={styles.cursor} />
                 </div>
               </div>
